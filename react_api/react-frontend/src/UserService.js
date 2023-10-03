@@ -5,6 +5,7 @@ const USERS_REST_API_URL = 'http://localhost:8081/api/users';
 class UserService {
 
     getUsers(){
+      console.log("  text = "+axios.get(USERS_REST_API_URL))
         return axios.get(USERS_REST_API_URL);
     }
 

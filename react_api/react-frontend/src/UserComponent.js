@@ -3,7 +3,9 @@ import UserService from './UserService';
 //import { getUsers, addUser, deleteUser, editUser } from './UserService';
 
 function UserComponent() {
+  //use state ko const me return kiya 
   const [users, setUsers] = useState([]);
+  
   const [newUser, setNewUser] = useState({ firstName: '', lastName: '', email: '' });
   const [editUser, setEditUser] = useState({ id: null, firstName: '', lastName: '', email: '' });
 
@@ -32,11 +34,11 @@ function UserComponent() {
         console.error('Error adding user:', error);
       });
   };
-
+  // edit dta
   const handleSetEditUser = (user) => {
     setEditUser(user);
   };
-
+ // edit api data
   const handleEditInputChange = (e) => {
     const { name, value } = e.target;
     setEditUser((prevEditUser) => ({ ...prevEditUser, [name]: value }));
@@ -154,5 +156,4 @@ function UserComponent() {
     </div>
   );
 }
-
 export default UserComponent;
